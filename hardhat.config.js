@@ -7,8 +7,8 @@ module.exports = {
   networks: {
     sepolia: {
       // url: 'https://arbitrum-sepolia.blockpi.network/v1/rpc/public',
-      // url: 'https://sepolia-rollup.arbitrum.io/rpc',
-      url: 'https://arb-sepolia.g.alchemy.com/v2/nygsRS401lXLo260JSKGSnAphyIIfWVR',
+      url: 'https://sepolia-rollup.arbitrum.io/rpc',
+      // url: 'https://arb-sepolia.g.alchemy.com/v2/nygsRS401lXLo260JSKGSnAphyIIfWVR',
       accounts: [process.env.PRIVATE_KEY],
     },
     ganache: {
@@ -17,5 +17,24 @@ module.exports = {
       gas: 'auto',
       gasPrice: 'auto',
     },
+  },
+  etherscan: {
+    // apiKey: process.env.ETHERSCAN_API_KEY,
+    apiKey: {
+      sepolia: 'process.env.ETHERSCAN_API_KEY,'
+    },
+    customChains: [
+      {
+        network: 'sepolia',
+        chainId: 421614,
+        urls: {
+          apiURL: 'https://sepolia-explorer.arbitrum.io/api', // 替换为实际的API URL
+          browserURL: 'https://sepolia-explorer.arbitrum.io', // 替换为实际的浏览器 URL
+        },
+      },
+    ],
+  },
+  sourcify: {
+    enabled: true,
   },
 }

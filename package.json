@@ -11,6 +11,7 @@
     "deploy:GenericE20Token:ganache": "hardhat run --network sepolia scripts/GenericE20Token.deploy.js",
     "deploy:EthereumFaucet:ganache": "hardhat run --network ganache scripts/EthereumFaucet.deploy.js",
     "deploy:EthereumFaucet:sepolia": "hardhat run --network sepolia scripts/EthereumFaucet.deploy.js",
+    "flatten:EthereumFaucet": "hardhat flatten contracts/EthereumFaucet.sol > contracts/EthereumFaucet_Flattened.sol",
     "test": "hardhat test",
     "gc": "git add -A && git-cz && git pull && git push"
   },
@@ -20,6 +21,7 @@
     "@nomicfoundation/hardhat-network-helpers": "^1.0.0",
     "@nomicfoundation/hardhat-toolbox": "^4.0.0",
     "@nomicfoundation/hardhat-verify": "^2.0.0",
+    "@nomiclabs/hardhat-etherscan": "^3.1.8",
     "@typechain/ethers-v6": "^0.5.0",
     "@typechain/hardhat": "^9.0.0",
     "@types/chai": "^4.2.0",
