@@ -5,9 +5,14 @@ require('@nomicfoundation/hardhat-toolbox')
 module.exports = {
   solidity: '0.8.20',
   networks: {
-    sepolia: {
+    arbitrumSepolia: {
       // url: 'https://arbitrum-sepolia.blockpi.network/v1/rpc/public',
       url: 'https://sepolia-rollup.arbitrum.io/rpc',
+      // url: 'https://arb-sepolia.g.alchemy.com/v2/nygsRS401lXLo260JSKGSnAphyIIfWVR',
+      accounts: [process.env.PRIVATE_KEY],
+    },
+    arbitrumOne: {
+      url: 'https://api.arbiscan.io/api',
       // url: 'https://arb-sepolia.g.alchemy.com/v2/nygsRS401lXLo260JSKGSnAphyIIfWVR',
       accounts: [process.env.PRIVATE_KEY],
     },
@@ -21,15 +26,17 @@ module.exports = {
   etherscan: {
     // apiKey: process.env.ETHERSCAN_API_KEY,
     apiKey: {
-      sepolia: 'process.env.ETHERSCAN_API_KEY,'
+      arbitrumOne: process.env.ARBISCAN_API_KEY,
+      arbitrumGoerli: process.env.ARBISCAN_API_KEY,
+      arbitrumSepolia: process.env.ARBISCAN_API_KEY,
     },
     customChains: [
       {
-        network: 'sepolia',
+        network: 'arbitrumSepolia',
         chainId: 421614,
         urls: {
-          apiURL: 'https://sepolia-explorer.arbitrum.io/api', // 替换为实际的API URL
-          browserURL: 'https://sepolia-explorer.arbitrum.io', // 替换为实际的浏览器 URL
+          apiURL: 'https://api-sepolia.arbiscan.io/api',
+          browserURL: 'https://sepolia.arbiscan.io/',
         },
       },
     ],

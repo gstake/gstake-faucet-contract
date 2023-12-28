@@ -21,6 +21,8 @@ contract EthereumFaucet is Ownable {
     ethAmount = _ethAmount;
   }
 
+  receive() external payable {}
+
   function requestTokens() public {
     require(!isPaused, 'Faucet is paused');
     require(block.timestamp - lastAccessTime[msg.sender] > 1 days, 'Wait 24h');
