@@ -13,7 +13,6 @@ module.exports = {
     },
     arbitrumOne: {
       url: 'https://api.arbiscan.io/api',
-      // url: 'https://arb-sepolia.g.alchemy.com/v2/nygsRS401lXLo260JSKGSnAphyIIfWVR',
       accounts: [process.env.PRIVATE_KEY],
     },
     ganache: {
@@ -24,7 +23,6 @@ module.exports = {
     },
   },
   etherscan: {
-    // apiKey: process.env.ETHERSCAN_API_KEY,
     apiKey: {
       arbitrumOne: process.env.ARBISCAN_API_KEY,
       arbitrumGoerli: process.env.ARBISCAN_API_KEY,
@@ -37,6 +35,14 @@ module.exports = {
         urls: {
           apiURL: 'https://api-sepolia.arbiscan.io/api',
           browserURL: 'https://sepolia.arbiscan.io/',
+        },
+      },
+      {
+        network: 'arbitrumOne',
+        chainId: 42161,
+        urls: {
+          apiURL: 'https://api.arbiscan.io/api',
+          browserURL: 'https://arbiscan.io/',
         },
       },
     ],
